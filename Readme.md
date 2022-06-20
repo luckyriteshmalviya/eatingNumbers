@@ -1,5 +1,4 @@
-#/\* A number can eat the number to the right of it if it's smaller than itself. After eating that number, it becomes
-the sum of itself and that number. Your job is to return the final array after the leftmost element has finished "eating".
+# \* A number can eat the number to the right of it if it's smaller than itself. After eating that number, it becomes the sum of itself and that number. Your job is to return the final array after the leftmost element has finished "eating".
 
     Constraints
     • Each array has at least 2 elements.
@@ -29,7 +28,7 @@ the sum of itself and that number. Your job is to return the final array after t
     */
 
 /\*\*
-
+## Algorithm  
 - Step 001 - Check wheather the input is valid or not by using if-else condition.
 - Step 1.1 - If not just return the message - "Please Enter Valid Input."
 - Step 002 - Create a variable "arrayLength" for optimization purpose.
@@ -41,25 +40,27 @@ the sum of itself and that number. Your job is to return the final array after t
 - Step 4.4 - Apply continue so the iteration keeps gong on untill the last possible execution.
 - Step 005 - Return the inputArr.
   \*/
-
-function eatingNumbers(inputArr) {
-// Gaurd Block Approach
-// if (!inputArr || !Array.isArray(inputArr) || inputArr.length <= 1) {
-// return "Please Return Valid Input.";
-// }
-if (inputArr && Array.isArray(inputArr) && inputArr.length > 1) {
-let arrayLength = inputArr.length;
-for (let i = 0; i < arrayLength; i++) {
-if (inputArr[0] > inputArr[1]) {
-let sum = inputArr[i] + inputArr[i + 1];
-inputArr.splice(i, 2, sum);
-i = i - 1;
-continue;
-}
-}
-return inputArr;
-}
-return "Please Enter Valid Input.";
-}
-let arr = [2, 1, 7];
-console.log(eatingNumbers(arr));
+  
+  ## Approach no.1 :-  
+function eatingNumbers(inputArr) {  
+// Gaurd Block Approach  
+// if (!inputArr || !Array.isArray(inputArr) || inputArr.length <= 1) {  
+// return "Please Return Valid Input.";  
+// }  
+if (inputArr && Array.isArray(inputArr) && inputArr.length > 1) {  
+let arrayLength = inputArr.length;  
+for (let i = 0; i < arrayLength; i++) {   
+if (inputArr[0] > inputArr[1]) {  
+let sum = inputArr[i] + inputArr[i + 1];   
+inputArr.splice(i, 2, sum);  
+i = i - 1;  
+continue;  
+}  
+}  
+return inputArr;  
+}  
+return "Please Enter Valid Input.";  
+}  
+let arr = [2, 1, 7];  
+console.log(eatingNumbers(arr));  
+  
